@@ -1,0 +1,12 @@
+name 'n1nj4-users'
+maintainer 'The Authors'
+maintainer_email 'you@example.com'
+license 'all_rights'
+description 'Installs/Configures n1nj4-users'
+long_description 'Installs/Configures n1nj4-users'
+version '0.1.0'
+
+depends 'chef-sugar', '~> 3.1.0'
+depends 'users', '~> 1.8.2'
+depends 'user', '~> 0.4.2'
+depends 'sudo', '~> 2.7.1'
