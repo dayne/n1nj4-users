@@ -4,7 +4,7 @@ maintainer_email 'you@example.com'
 license 'all_rights'
 description 'Installs/Configures n1nj4-users'
 long_description 'Installs/Configures n1nj4-users'
-version '0.1.0'
+version '0.1.1'
 
 depends 'chef-sugar', '~> 3.1.0'
 depends 'users', '~> 1.8.2'

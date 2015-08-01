@@ -21,7 +21,9 @@ when 'rhel'
     'secure_path = /sbin:/bin:/usr/sbin:/usr/bin'
   ]
 when 'debian'
-  if node['platform'] == 'ubuntu'
+  case node['platform'] == 'ubuntu'
+  when 'ubuntu'
+  when 'raspbian'
     default['authorization']['sudo']['sudoers_defaults'] = [
       'env_reset',
       'secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"'

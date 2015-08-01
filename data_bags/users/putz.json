@@ -1,0 +1,12 @@
+{
+  "id": "putz",
+  "uid": 5031,
+	"home": "/home/putz",
+	"shell": "/bin/bash",
+	"comment": "Super Putz",
+	"email": "putz@nil.nil",
+  "action": [ "create", "manage" ],
+  "groups": [ "farts" ],
+  "sudo_hosts": [ "workstation-ubuntu-1404" ],
+  "ssh_keygen": false
+}

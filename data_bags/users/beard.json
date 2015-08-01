@@ -1,0 +1,12 @@
+{
+  "id": "beard",
+  "uid": 3083,
+  "gid": 3083,
+  "home": "/home/beard",
+  "shell": "/bin/bash",
+  "comment": "Beard Face",
+  "email": "beard@face.com",
+  "groups": [ "webdev", "sysadmin" ],
+  "action": [ "create", "manage" ],
+  "ssh_keygen": false
+}
