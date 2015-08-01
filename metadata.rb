@@ -8,5 +8,4 @@ version '0.1.0'
 
 depends 'chef-sugar', '~> 3.1.0'
 depends 'users', '~> 1.8.2'
-depends 'user', '~> 0.4.2'
 depends 'sudo', '~> 2.7.1'

@@ -1,6 +1,6 @@
 {
   "id": "vagrant",
-  "groups": [ "gina", "wheel", "sysadmin" ],
+  "groups": [ "wheel", "sysadmin" ],
   "action": [ "manage" ],
   "ssh_keygen": false
 }

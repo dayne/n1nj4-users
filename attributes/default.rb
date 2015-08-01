@@ -1,7 +1,4 @@
-default['managed_user_groups'] = {
-  sysadmin: 2300
-}
-
+default['user']['managed_user_groups'] = { sysadmin: 2300 }
 default['user']['ssh_keygen'] = false
 
 # sudo management
