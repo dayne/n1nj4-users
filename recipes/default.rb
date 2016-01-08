@@ -8,6 +8,7 @@ include_recipe 'chef-sugar::default'
 
 #if raspbian? 
   chef_gem 'ruby-shadow' do
+    compile_time false if Chef::Resource::ChefGem.method_defined?(:compile_time)
     action :install
   end
 #end
