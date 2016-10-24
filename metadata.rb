@@ -1,11 +1,11 @@
 name 'n1nj4-users'
-maintainer 'The Authors'
+maintainer 'Dayne Broderson'
 maintainer_email 'you@example.com'
-license 'all_rights'
+license 'WTFPL' # public domain - go nuts
 description 'Installs/Configures n1nj4-users'
 long_description 'Installs/Configures n1nj4-users'
-version '0.1.3'
+version '0.2.6'
 
 depends 'chef-sugar' 
-depends 'users', '~> 2.0.0'
-depends 'sudo', '~> 2.7.2'
+depends 'users' #, '~> 4.0.1'
+depends 'sudo'  #, '~> 3.0.0'
