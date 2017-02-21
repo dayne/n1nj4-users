@@ -4,32 +4,25 @@
 #
 # Copyright (c) 2015 The Authors, All Rights Reserved.
 
-include_recipe 'chef-sugar::default'
+include_recipe 'users'
 
-#if raspbian? 
-  chef_gem 'ruby-shadow' do
-    compile_time false if Chef::Resource::ChefGem.method_defined?(:compile_time)
-    action :install
-  end
-#end
+# groups_databag_bucket = groups
+# groups_databag_name   = home
+groups = data_bag_item(node['groups_databag_bucket'], node['groups_databag_name'])
 
-include_recipe "users"
+group 'sysadmin' do |g|
+  gid groups[g]
+  action [ :create ]
+end
 
-node.default['authorization']['sudo']['passwordless'] = true
-
-%w( sysadmin ).each do |group|
-  users_manage group do
-    group_id 4711
-    action [ :create ]
+if not node['user']['limit_sysadmin']
+  %w( sysadmin ).each do |group|
+    users_manage group do
+      group_id groups[group]
+      action [ :remove, :create ]
+    end
   end
 end
 
-#node['managed_user_groups'].each do |group_name, gid|
-#  next if !gid
-#  users_manage group_name do
-#    group_id gid
-#    action [:remove, :create]
-#  end
-#end
-
+# node.default['authorization']['sudo']['passwordless'] = true
 include_recipe 'sudo::default'

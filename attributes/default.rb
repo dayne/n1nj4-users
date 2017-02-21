@@ -1,10 +1,22 @@
 default['user']['managed_user_groups'] = { sysadmin: 2300 }
 default['user']['ssh_keygen'] = false
 
+# flipt to true if you don't add all the sysadmin users
+default['user']['limit_sysadmin'] = false
+
+default['groups_databag_bucket'] = 'groups'
+default['groups_databag_name'] = 'home'
+
 # sudo management
 # These groups will be given sudo access on the node
-default['authorization']['sudo']['groups'] = %w(wheel sysadmin)
-# For now all users with sudo access can do it without a password
+default['authorization']['sudo']['groups'] = case node['platform_family']
+                                             when 'debian' then
+                                               %w(sudo sysadmin)
+                                             else
+                                               %w(wheel sysadmin)
+                                             end
+
+# uncomment to give users with sudo access passwordless entry
 default['authorization']['sudo']['passwordless'] = true
 default['authorization']['sudo']['include_sudoers_d'] = true
 
@@ -21,12 +33,10 @@ when 'rhel'
     'secure_path = /sbin:/bin:/usr/sbin:/usr/bin'
   ]
 when 'debian'
-  case node['platform'] == 'ubuntu'
-  when 'ubuntu'
-  when 'raspbian'
+  if node['platform'] == 'ubuntu'
     default['authorization']['sudo']['sudoers_defaults'] = [
       'env_reset',
-      'secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"'
+      'secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"',
     ]
   end
 end
