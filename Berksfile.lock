@@ -1,0 +1,20 @@
+DEPENDENCIES
+  chef-sugar
+    git: https://github.com/sethvargo/chef-sugar.git
+    revision: 6f7fbbaf724c7347edb97e6f92fbc694b999bf34
+  n1nj4-users
+    path: .
+    metadata: true
+  sudo
+  user
+  users
+
+GRAPH
+  chef-sugar (3.4.0)
+  n1nj4-users (0.3.0)
+    sudo (>= 0.0.0)
+    user (>= 0.0.0)
+    users (>= 0.0.0)
+  sudo (3.0.0)
+  user (0.4.2)
+  users (4.0.1)
