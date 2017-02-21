@@ -1,6 +1,0 @@
-{
-  "id": "vagrant",
-  "groups": [ "wheel", "sysadmin" ],
-  "action": [ "manage" ],
-  "ssh_keygen": false
-}

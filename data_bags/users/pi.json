@@ -1,0 +1,11 @@
+{
+  "id": "pi",
+  "shell": "/bin/bash",
+  "password": "*",
+  "groups": [
+    "pi"
+  ],
+  "action": [
+    "manage"
+  ]
+}
