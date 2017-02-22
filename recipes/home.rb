@@ -23,9 +23,9 @@ end
 # TODO: manage pi by locking password and putting pi keys in place
 
 # TODO: remove chef account
-# users_manage 'chef' do
-#   action [ :remove ]
-# end
+users_manage 'chef' do
+  action [ :remove ]
+end
 
 include_recipe 'n1nj4-users::default'
 include_recipe 'sudo::default'
