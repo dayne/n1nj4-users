@@ -2,7 +2,7 @@ default['user']['managed_user_groups'] = { sysadmin: 2300 }
 default['user']['ssh_keygen'] = false
 
 # flipt to true if you don't add all the sysadmin users
-default['user']['limit_sysadmin'] = false
+default['user']['limit_sysadmin'] = true
 
 default['groups_databag_bucket'] = 'groups'
 default['groups_databag_name'] = 'home'
